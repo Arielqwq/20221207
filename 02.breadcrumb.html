@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 1. link bootstrap.css -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <title>Document</title>
+  <style>
+    .breadcrumb-divider-1 {
+      --bs-breadcrumb-divider: ">";
+    }
+
+    .breadcrumb-divider-2 {
+      --bs-breadcrumb-divider: "\279c";
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>麵包屑</h1>
+    <h2>1.直接修改原生變數</h2>
+    <nav>
+      <ol class="breadcrumb breadcrumb-divider-1">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active">Data</li>
+      </ol>
+    </nav>
+
+    <h2>2.<a href="https://unicode-table.com/en/">使用 unicode</a></h2>
+    <nav>
+      <ol class="breadcrumb breadcrumb-divider-2">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active">Data</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- 2. link bootstrap.bundle.js -->
+  <script src="./js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 1. link bootstrap.css -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <title>Document</title>
+  <style>
+    /* 自訂 navbar 背景色 */
+    :root {
+      --bs-coffee-rgb: 60, 40, 0;
+    }
+
+    .bg-coffee {
+      --bs-bg-opacity: 1;
+      background-color: rgba(var(--bs-coffee-rgb), var(--bs-bg-opacity)) !important;
+    }
+
+    #kaifu .btn-close {
+      filter: invert(100);
+    }
+
+    #kaifu {
+      width: 250px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-coffee fixed-top">
+    <!-- .container-fluid 滿版、.container 固定寬度 -->
+    <div class="container-fluid">
+      <!-- logo -->
+      <a class="navbar-brand" href="#">泰山咖啡莊園</a>
+      <!-- 漢堡按鈕 -->
+      <!-- 原本 collapse 摺疊功能改成 data-bs-toggle="offcanvas"、data-bs-target="#kaifu" 不變 -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#kaifu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- 側邊欄選單區使用 offcanvas 的結構 -->
+      <div id="kaifu" class="offcanvas offcanvas-start bg-dark" data-bs-backdrop="true" data-bs-scroll="true">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-white">MENU</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#section01">菜單餐點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section02">周邊景點</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section03">莊園位置</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section04">聯絡我們</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- <div id="kaifu" class="offcanvas offcanvas-start">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#section01">菜單餐點</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section02">周邊景點</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section03">莊園位置</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section04">聯絡我們</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link"><i class="bi bi-card-text fs-5" style="vertical-align: -2px;"></i> 註冊</a>
+          </li>
+          <li class="nav-item vr text-white" style="transform: scaleY(0.5);"></li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="bi bi-card-text fs-5" style="vertical-align: -2px;"></i> 登入</a>
+          </li>
+        </ul>
+      </div> -->
+    </div>
+  </nav>
+  <!-- 2. link bootstrap.bundle.js -->
+  <script src="./js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

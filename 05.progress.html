@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 1. link bootstrap.css -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <title>Document</title>
+  <style>
+    .container {
+      margin-bottom: 2rem;
+      ;
+    }
+
+    .progress {
+      margin-bottom: 1rem;
+    }
+
+    #progress .progress-bar {
+      background: purple;
+    }
+
+    #progress .progress-bar.active~.progress-bar {
+      background: #999;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>進度條</h3>
+    <div class="row">
+      <div class="col">
+        <div class="progress">
+          <div class="progress-bar">0%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-success" style="width: 25%">25%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-info" style="width: 50%">50%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-warning" style="width: 75%">75%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-danger" style="width: 100%">100%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h3>高度</h3>
+        <div class="progress" style="height:1px">
+          <div class="progress-bar" style="width:25%">25%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h3>條紋式</h3>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" style="width:25%">25%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3>多進度條</h3>
+      <div class="col">
+        <div id="progress" class="progress fs-6" style="height:30px;">
+          <div class="progress-bar progress-bar-striped progress-bar-animated active" style="width:20%">步驟一</div>
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:20%">步驟二</div>
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:20%">步驟三</div>
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:20%">步驟四</div>
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:20%">完成</div>
+        </div>
+        <button id="btn" class="btn btn-primary">下一步</button>
+      </div>
+    </div>
+  </div>
+  <!-- 2. link bootstrap.bundle.js -->
+  <script src="./js/bootstrap.bundle.js"></script>
+  <script>
+    const btn = document.querySelector('#btn')
+    const progress = document.querySelectorAll('#progress .progress-bar')
+    let currentIndex = 0
+    btn.addEventListener('click', clickHandler)
+
+    function clickHandler(e) {
+      currentIndex++;
+      if (currentIndex < progress.length) {
+        progress.forEach(function (item) {
+          item.classList.remove('active')
+          progress[currentIndex].classList.add('active')
+        })
+      }
+    }
+  </script>
+</body>
+
+</html>
